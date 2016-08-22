@@ -1,0 +1,28 @@
+//
+//  PrefixHeader.pch
+//  DrawGraphic
+//
+//  Created by Aurora on 16/8/16.
+//  Copyright © 2016年 howbuy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#define FUNC_EXPORT(fork_name) __attribute__((used, section("__DATA, __func_export"))) \
+static const char *FUNC_EXPORT_ENTRY[] = { __func__, #fork_name }
+
+#if 1
+#define CLASS_EXPORTS(ClassName) __attribute__((used, section("__DATA, __class_export"))) \
+static const char *CLASS_EXPORT_ENTRY[] = {#ClassName}; \
+@interface ClassName
+#else
+#define CLASS_EXPORTS(ClassName) @interface ClassName
+#endif
+
+#define PT(Name) @"4444"#Name
