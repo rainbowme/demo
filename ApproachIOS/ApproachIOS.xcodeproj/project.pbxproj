@@ -20,7 +20,6 @@
 		D01F08ED1D6AA1D300431B93 /* DrawGraphicController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08D41D6AA1D300431B93 /* DrawGraphicController.m */; };
 		D01F08EE1D6AA1D300431B93 /* Module2ObjController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08D71D6AA1D300431B93 /* Module2ObjController.m */; };
 		D01F08EF1D6AA1D300431B93 /* NSObject+AutoMagicCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08DA1D6AA1D300431B93 /* NSObject+AutoMagicCoding.m */; };
-		D01F08F01D6AA1D300431B93 /* ObjCRuntimeController+ISA.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08DD1D6AA1D300431B93 /* ObjCRuntimeController+ISA.m */; };
 		D01F08F11D6AA1D300431B93 /* ObjCRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08DF1D6AA1D300431B93 /* ObjCRuntimeController.m */; };
 		D01F08F21D6AA1D300431B93 /* OffscreenRenderController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08E21D6AA1D300431B93 /* OffscreenRenderController.m */; };
 		D01F08F31D6AA1D300431B93 /* OffscreenRenderController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F08E31D6AA1D300431B93 /* OffscreenRenderController.storyboard */; };
@@ -67,8 +66,6 @@
 		D01F08D71D6AA1D300431B93 /* Module2ObjController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Module2ObjController.m; sourceTree = "<group>"; };
 		D01F08D91D6AA1D300431B93 /* NSObject+AutoMagicCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AutoMagicCoding.h"; sourceTree = "<group>"; };
 		D01F08DA1D6AA1D300431B93 /* NSObject+AutoMagicCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoMagicCoding.m"; sourceTree = "<group>"; };
-		D01F08DC1D6AA1D300431B93 /* ObjCRuntimeController+ISA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjCRuntimeController+ISA.h"; sourceTree = "<group>"; };
-		D01F08DD1D6AA1D300431B93 /* ObjCRuntimeController+ISA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjCRuntimeController+ISA.m"; sourceTree = "<group>"; };
 		D01F08DE1D6AA1D300431B93 /* ObjCRuntimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCRuntimeController.h; sourceTree = "<group>"; };
 		D01F08DF1D6AA1D300431B93 /* ObjCRuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCRuntimeController.m; sourceTree = "<group>"; };
 		D01F08E11D6AA1D300431B93 /* OffscreenRenderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffscreenRenderController.h; sourceTree = "<group>"; };
@@ -234,8 +231,6 @@
 		D01F08DB1D6AA1D300431B93 /* ObjCRuntimeController */ = {
 			isa = PBXGroup;
 			children = (
-				D01F08DC1D6AA1D300431B93 /* ObjCRuntimeController+ISA.h */,
-				D01F08DD1D6AA1D300431B93 /* ObjCRuntimeController+ISA.m */,
 				D01F08DE1D6AA1D300431B93 /* ObjCRuntimeController.h */,
 				D01F08DF1D6AA1D300431B93 /* ObjCRuntimeController.m */,
 			);
@@ -398,7 +393,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01F08EF1D6AA1D300431B93 /* NSObject+AutoMagicCoding.m in Sources */,
-				D01F08F01D6AA1D300431B93 /* ObjCRuntimeController+ISA.m in Sources */,
 				D01F08E91D6AA1D300431B93 /* ApproachKVOController.m in Sources */,
 				D01F08EB1D6AA1D300431B93 /* ApproachThreadController+OperationQueue.m in Sources */,
 				D01F08ED1D6AA1D300431B93 /* DrawGraphicController.m in Sources */,

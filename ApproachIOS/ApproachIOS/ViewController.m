@@ -71,7 +71,6 @@ static id invoke_method(id self, SEL _cmd, id newValue, id newValue2)
     // call super's setter, which is original class's setter method
     objc_msgSendSuperCasted(&superclazz, _cmd, newValue, newValue2);
     
-    
     UIView *view = [UIView new];
     view.backgroundColor = [UIColor clearColor];
     return view;
@@ -114,8 +113,8 @@ static Class rich_class(id self, SEL _cmd)
     // isa point to aClass
     object_setClass(self, aClass);
     
-    
-    //[self performSelector:aSel withObject:self.tableView withObject:@(0)];
+    // 测试添加的新函数
+    // [self performSelector:aSel withObject:self.tableView withObject:@(0)];
 }
 
 - (void)didReceiveMemoryWarning {

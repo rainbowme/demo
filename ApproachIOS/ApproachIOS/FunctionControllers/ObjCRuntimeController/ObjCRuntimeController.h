@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ObjCRuntimeController : UIViewController
+CLASS_EXPORTS(ObjCRuntimeController) : UIViewController
 
 @end

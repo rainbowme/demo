@@ -11,11 +11,14 @@
 
 @interface AutoLayoutController ()
 {
-    IBOutlet __weak UIButton *btn;
+    //__weak IBOutlet UIButton *btn;
 }
+@property (weak, nonatomic) IBOutlet UIButton *btn;
 @end
 
+// 去掉SB的autolayout Checkingbox
 @implementation AutoLayoutController
+@synthesize btn;
 
 - (instancetype)init
 {
@@ -29,12 +32,17 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     
+    //
+    __weak __typeof(&*self)weakSelf = self;
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_topLayoutGuide);
-        make.left.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.height.equalTo(@40);
+        make.center.equalTo(weakSelf.view);
+        make.size.mas_equalTo(CGSizeMake(300, 1000));
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,5 +59,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)onClick:(id)sender
+{
+    __weak __typeof(&*self)weakSelf = self;
+    [btn mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(weakSelf.view);
+        make.size.equalTo(weakSelf.view);
+    }];
+}
 
 @end

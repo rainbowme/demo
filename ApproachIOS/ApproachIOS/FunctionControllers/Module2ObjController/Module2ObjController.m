@@ -50,8 +50,6 @@ CELL_INFO_MODULE_END(ModuleInfoCell)
 
 @implementation Module2ObjController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

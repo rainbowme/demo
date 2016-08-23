@@ -7,14 +7,55 @@
 //
 
 #import "ObjCRuntimeController.h"
-#import "ObjCRuntimeController+ISA.h"
+#include <objc/runtime.h>
 
+@interface NewClass : UIViewController
+- (void)hello;
+@end
 
-CLASS_EXPORTS(ObjCRuntimeController) ()
+@implementation NewClass
+
+- (void)hello
+{
+    NSLog(@"%s", __func__);
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation
+{
+    if ([self respondsToSelector:[invocation selector]]) {
+        [invocation invokeWithTarget:self];
+    }
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
+{
+    NSMethodSignature *sig = [[NSNull class] instanceMethodSignatureForSelector:selector];
+    if(sig == nil) {
+        sig = [NSMethodSignature signatureWithObjCTypes:"@^v^c"];
+    }
+    return sig;
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector
+{
+    return nil;
+}
+
+- (void)doesNotRecognizeSelector:(SEL)aSelector
+{
+    
+}
 
 @end
 
+
+
 @implementation ObjCRuntimeController
+
+- (void)transform
+{
+    object_setClass(self, [NewClass class]);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +69,7 @@ CLASS_EXPORTS(ObjCRuntimeController) ()
     void (*setter)(id, SEL);
     setter = (void(*)(id, SEL))[self methodForSelector:@selector(helloxx)];
     setter(self, @selector(helloxx));
+    
 }
 
 - (void)didReceiveMemoryWarning {
