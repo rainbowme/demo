@@ -14,6 +14,10 @@
 
 #endif /* PrefixHeader_pch */
 
+#import "UIViewController+ExhibitHelper.h"
+
+
+
 #define FUNC_EXPORT(fork_name) __attribute__((used, section("__DATA, __func_export"))) \
 static const char *FUNC_EXPORT_ENTRY[] = { __func__, #fork_name }
 
