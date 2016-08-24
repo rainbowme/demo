@@ -31,8 +31,10 @@ CLASS_EXPORTS(DrawGraphicController) ()
 @end
 
 typedef NS_ENUM(NSInteger, MethodIndex) {
+    kMIDrawnUnknow,
     kMIDrawLine,
-    kMIDrawText
+    kMIDrawText,
+    kMIDrawGradientSqure, // 渐变正方形
 };
 @implementation DrawGraphicController
 
@@ -51,7 +53,7 @@ typedef NS_ENUM(NSInteger, MethodIndex) {
     dataDictionary = [NSMutableDictionary dictionary];
     
 #define DRAW_GRAPHIC_WITH_BLOCK(index, text) \
-self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef context)
+self registerId:index name:text forDrawBlock:^(CGContextRef context)
     //UIGraphicsPushContext(context);
     //UIGraphicsPopContext();
     // NO.1画一条线
@@ -73,20 +75,20 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         UIGraphicsPopContext();
     }];
     // NO.3画一个正方形图形 没有边框
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetRGBFillColor(context, 0, 0.25, 0, 0.5);
         CGContextFillRect(context, CGRectMake(2, 2, 270, 270));
         CGContextStrokePath(context);
     }];
     // NO.4画正方形边框
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetRGBStrokeColor(context, 0.5, 0.5, 0.5, 0.5);//线条颜色
         CGContextSetLineWidth(context, 2.0);
         CGContextAddRect(context, CGRectMake(2, 2, 270, 270));
         CGContextStrokePath(context);
     }];
     // NO.5画方形背景颜色
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSaveGState(context);
         CGContextSetLineWidth(context,320);
         CGContextSetRGBStrokeColor(context, 250.0/255, 250.0/255, 210.0/255, 0.7);
@@ -94,7 +96,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextRestoreGState(context);
     }];
     // NO.6椭圆
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetRGBStrokeColor(context, 0.6, 0.9, 0, 1.0);
         CGContextSetLineWidth(context, 3.0);
         CGRect aRect= CGRectMake(80, 80, 160, 100);
@@ -103,7 +105,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
     }];
     
     // NO.7
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextBeginPath(context);
         CGContextSetRGBStrokeColor(context, 0, 0, 1, 1);
         CGContextMoveToPoint(context, 100, 100);
@@ -111,7 +113,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextStrokePath(context);
     }];
     // NO.8渐变
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawGradientSqure, @"渐变正方形") {
         CGContextClip(context);
         CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
         CGFloat colors[] =
@@ -129,7 +131,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
     }];
     // NO.9四条线画一个正方形
     //画线
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetRGBStrokeColor(context, 1.0, 0, 0, 1.0);
         UIColor *aColor = [UIColor colorWithRed:0 green:1.0 blue:0 alpha:0];
         CGContextSetFillColorWithColor(context, aColor.CGColor);
@@ -144,7 +146,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextDrawPath(context, kCGPathStroke); // 开始画线
     }];
     // NO.10
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         UIColor *aColor = [UIColor colorWithRed:0 green:1.0 blue:0 alpha:0];
         CGContextSetRGBStrokeColor(context, 1.0, 0, 0, 1.0);
         CGContextSetFillColorWithColor(context, aColor.CGColor);
@@ -160,12 +162,12 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
     }];
     
     // NO.11 画一个实心的圆
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextFillEllipseInRect(context, CGRectMake(95, 95, 100.0, 100));
     }];
     
     // NO.12 画一个菱形
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGContextMoveToPoint(context, 100, 100);
@@ -176,7 +178,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextStrokePath(context);
     }];
     // NO.13 画矩形
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGRect rectangle = CGRectMake(60,170,200,80);
@@ -184,7 +186,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextStrokePath(context);
     }];
     // 椭圆
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGRect rectangle = CGRectMake(60,170,200,80);
@@ -193,7 +195,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
     }];
     
     // 用红色填充了一段路径:
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextMoveToPoint(context, 100, 100);
         CGContextAddLineToPoint(context, 150, 150);
         CGContextAddLineToPoint(context, 100, 200);
@@ -203,7 +205,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextFillPath(context);
     }];
     // 填充一个蓝色边的红色矩形
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGRect rectangle = CGRectMake(60,170,200,80);
@@ -215,7 +217,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
     
     // 画弧
     //弧线的是通过指定两个切点，还有角度，调用CGContextAddArcToPoint()绘制
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGContextMoveToPoint(context, 100, 100);
@@ -224,7 +226,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
     }];
     // 绘制贝兹曲线
     // 贝兹曲线是通过移动一个起始点，然后通过两个控制点,还有一个中止点，调用CGContextAddCurveToPoint() 函数绘制
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGContextMoveToPoint(context, 10, 10);
@@ -232,7 +234,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextStrokePath(context);
     }];
     // 绘制二次贝兹曲线
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 2.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGContextMoveToPoint(context, 10, 200);
@@ -240,7 +242,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextStrokePath(context);
     }];
     // 绘制虚线
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         CGContextSetLineWidth(context, 5.0);
         CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
         CGFloat dashArray[] = {2,6,4,2};
@@ -250,7 +252,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextStrokePath(context);
     }];
     //绘制图片
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         NSString* imagePath = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"png"];
         UIImage* myImageObj = [[UIImage alloc] initWithContentsOfFile:imagePath];
         //[myImageObj drawAtPoint:CGPointMake(0, 0)];
@@ -259,7 +261,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         [s drawAtPoint:CGPointMake(100, 0) withFont:[UIFont systemFontOfSize:34.0]];
     }];
     
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"png"];
         UIImage *img = [UIImage imageWithContentsOfFile:path];
         CGImageRef image = img.CGImage;
@@ -269,7 +271,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextRestoreGState(context);
     }];
     
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"png"];
         UIImage *img = [UIImage imageWithContentsOfFile:path];
         CGImageRef image = img.CGImage;
@@ -284,7 +286,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextRestoreGState(context);
     }];
     
-    [DRAW_GRAPHIC_WITH_BLOCK(-1, @"正方形") {
+    [DRAW_GRAPHIC_WITH_BLOCK(kMIDrawnUnknow, @"正方形") {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"png"];
         UIImage *img = [UIImage imageWithContentsOfFile:path];
         CGImageRef image = img.CGImage;
@@ -302,7 +304,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
         CGContextDrawImage(context, touchRect, image);
         CGContextRestoreGState(context);
     }];
-
+#undef DRAW_GRAPHIC_WITH_BLOCK
     // init button for dispatch message
     [self registerAllButtonsWithClick];
 }
@@ -334,15 +336,16 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
 {
     NSArray *dataArray = [dataDictionary allValues];
     NSInteger index = 0;
-    for(UIButton *btn in _baseView.subviews) {
-        if(index<dataArray.count) {
-            DataInfo *dataInfo = dataArray[index++];
-            btn.tag = dataInfo.index;
-            [btn setTitle:dataInfo.name forState:UIControlStateNormal];
-        } else {
-            btn.tag = 9999;
-        }
+    for(DataInfo *dataInfo in dataArray) {
+        CGFloat xOffset = 10+(80+10)*index++;
+        CGFloat yOffset = 10;
+        CGRect frame = CGRectMake(xOffset, yOffset, 80, 40);
+        UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+        btn.backgroundColor = [UIColor lightGrayColor];
+        btn.tag = dataInfo.index;
+        [btn setTitle:dataInfo.name forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_baseView addSubview:btn];
     }
 }
 
@@ -350,7 +353,7 @@ self registerId:kMIDrawLine name:@"画一条线" forDrawBlock:^(CGContextRef con
               name:(NSString *)name
       forDrawBlock:(void(^)(CGContextRef context))block
 {
-    if(block) {
+    if(block && index!=kMIDrawnUnknow) {
         DataInfo *dataInfo = [DataInfo new];
         dataInfo.index = index;
         dataInfo.name = name;
