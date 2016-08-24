@@ -41,6 +41,7 @@
 		D01F09271D6C1B8100431B93 /* UIViewController+ExhibitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F09261D6C1B8100431B93 /* UIViewController+ExhibitHelper.m */; };
 		D01F09291D6D31AA00431B93 /* DrawGraphicController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F09281D6D31AA00431B93 /* DrawGraphicController.storyboard */; };
 		D01F092D1D6D37F300431B93 /* DrawBezierCurveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F092C1D6D37F300431B93 /* DrawBezierCurveController.m */; };
+		D01F09301D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F092F1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,8 @@
 		D01F09281D6D31AA00431B93 /* DrawGraphicController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawGraphicController.storyboard; sourceTree = "<group>"; };
 		D01F092B1D6D37F300431B93 /* DrawBezierCurveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBezierCurveController.h; sourceTree = "<group>"; };
 		D01F092C1D6D37F300431B93 /* DrawBezierCurveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBezierCurveController.m; sourceTree = "<group>"; };
+		D01F092E1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DrawGraphicController+RegisterDrawMethod.h"; sourceTree = "<group>"; };
+		D01F092F1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DrawGraphicController+RegisterDrawMethod.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 				D01F08D31D6AA1D300431B93 /* DrawGraphicController.h */,
 				D01F08D41D6AA1D300431B93 /* DrawGraphicController.m */,
 				D01F09281D6D31AA00431B93 /* DrawGraphicController.storyboard */,
+				D01F092E1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.h */,
+				D01F092F1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m */,
 			);
 			path = DrawGraphicController;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				D01F09181D6C180200431B93 /* MASViewAttribute.m in Sources */,
 				D01F09171D6C180200431B93 /* MASLayoutConstraint.m in Sources */,
 				D01F091B1D6C180200431B93 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				D01F09301D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m in Sources */,
 				D01F09161D6C180200431B93 /* MASConstraintMaker.m in Sources */,
 				D01F08B81D6AA0EA00431B93 /* ViewController.m in Sources */,
 				D01F08B51D6AA0EA00431B93 /* AppDelegate.m in Sources */,
