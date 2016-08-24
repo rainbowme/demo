@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-CLASS_EXPORTS(DrawGraphicController) : UIViewController
-
+@interface DrawGraphicController : UIViewController
+//@property (weak, nonatomic) IBOutlet UIView *baseView;
 @end

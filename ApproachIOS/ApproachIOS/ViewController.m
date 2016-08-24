@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <dlfcn.h>
 #import <mach-o/getsect.h>
-
+#import "DrawGraphicController.h"
 static NSArray *ExportedMethodsByModule(void)
 {
     NSMutableArray *array = [NSMutableArray array];

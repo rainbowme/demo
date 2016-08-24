@@ -39,6 +39,8 @@
 		D01F09201D6C181000431B93 /* AutoLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F091F1D6C181000431B93 /* AutoLayoutController.m */; };
 		D01F09221D6C181900431B93 /* AutoLayoutController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F09211D6C181900431B93 /* AutoLayoutController.storyboard */; };
 		D01F09271D6C1B8100431B93 /* UIViewController+ExhibitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F09261D6C1B8100431B93 /* UIViewController+ExhibitHelper.m */; };
+		D01F09291D6D31AA00431B93 /* DrawGraphicController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F09281D6D31AA00431B93 /* DrawGraphicController.storyboard */; };
+		D01F092D1D6D37F300431B93 /* DrawBezierCurveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F092C1D6D37F300431B93 /* DrawBezierCurveController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,9 @@
 		D01F09211D6C181900431B93 /* AutoLayoutController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AutoLayoutController.storyboard; sourceTree = "<group>"; };
 		D01F09251D6C1B8100431B93 /* UIViewController+ExhibitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ExhibitHelper.h"; sourceTree = "<group>"; };
 		D01F09261D6C1B8100431B93 /* UIViewController+ExhibitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ExhibitHelper.m"; sourceTree = "<group>"; };
+		D01F09281D6D31AA00431B93 /* DrawGraphicController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawGraphicController.storyboard; sourceTree = "<group>"; };
+		D01F092B1D6D37F300431B93 /* DrawBezierCurveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBezierCurveController.h; sourceTree = "<group>"; };
+		D01F092C1D6D37F300431B93 /* DrawBezierCurveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBezierCurveController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +171,7 @@
 		D01F08C71D6AA1D300431B93 /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D01F092A1D6D37E700431B93 /* DrawBezierCurveController */,
 				D01F08F71D6C180200431B93 /* AutoLayoutController */,
 				D01F08C81D6AA1D300431B93 /* ApproachKVOController */,
 				D01F08CB1D6AA1D300431B93 /* ApproachThreadController */,
@@ -205,6 +211,7 @@
 			children = (
 				D01F08D31D6AA1D300431B93 /* DrawGraphicController.h */,
 				D01F08D41D6AA1D300431B93 /* DrawGraphicController.m */,
+				D01F09281D6D31AA00431B93 /* DrawGraphicController.storyboard */,
 			);
 			path = DrawGraphicController;
 			sourceTree = "<group>";
@@ -319,6 +326,15 @@
 			path = "UIViewController+Extension";
 			sourceTree = "<group>";
 		};
+		D01F092A1D6D37E700431B93 /* DrawBezierCurveController */ = {
+			isa = PBXGroup;
+			children = (
+				D01F092B1D6D37F300431B93 /* DrawBezierCurveController.h */,
+				D01F092C1D6D37F300431B93 /* DrawBezierCurveController.m */,
+			);
+			path = DrawBezierCurveController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,6 +396,7 @@
 				D01F08BD1D6AA0EA00431B93 /* Assets.xcassets in Resources */,
 				D01F08F31D6AA1D300431B93 /* OffscreenRenderController.storyboard in Resources */,
 				D01F09131D6C180200431B93 /* Info.plist in Resources */,
+				D01F09291D6D31AA00431B93 /* DrawGraphicController.storyboard in Resources */,
 				D01F08BB1D6AA0EA00431B93 /* Main.storyboard in Resources */,
 				D01F09221D6C181900431B93 /* AutoLayoutController.storyboard in Resources */,
 			);
@@ -396,6 +413,7 @@
 				D01F08E91D6AA1D300431B93 /* ApproachKVOController.m in Sources */,
 				D01F08EB1D6AA1D300431B93 /* ApproachThreadController+OperationQueue.m in Sources */,
 				D01F08ED1D6AA1D300431B93 /* DrawGraphicController.m in Sources */,
+				D01F092D1D6D37F300431B93 /* DrawBezierCurveController.m in Sources */,
 				D01F09181D6C180200431B93 /* MASViewAttribute.m in Sources */,
 				D01F09171D6C180200431B93 /* MASLayoutConstraint.m in Sources */,
 				D01F091B1D6C180200431B93 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
