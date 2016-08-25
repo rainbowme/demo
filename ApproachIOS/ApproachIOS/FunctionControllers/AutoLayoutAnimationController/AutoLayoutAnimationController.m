@@ -10,6 +10,8 @@
 
 @interface AutoLayoutAnimationController ()
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIView *dview;
+//int ptrace(int request, int pid, int addr, int data);@property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttons;
 @end
 
 @implementation AutoLayoutAnimationController
@@ -25,6 +27,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [_btn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.dview.layer.borderWidth = 2.0f;
+    self.dview.layer.borderColor = [UIColor greenColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,6 +37,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+}
 /*
 #pragma mark - Navigation
 
@@ -44,13 +63,15 @@
 
 - (void)onClick:(UIButton *)sender
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:2 animations:^{
-            NSLog(@"%@", [NSThread currentThread]);
-            
-            self.view.frame = CGRectMake(100, 100, 50, 50);
-        }];
-    });
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+         usingSpringWithDamping:1.0f initialSpringVelocity:0.0f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+        self.dview.bounds = CGRectMake(0, 10, self.dview.bounds.size.width, self.dview.bounds.size.height);
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 @end

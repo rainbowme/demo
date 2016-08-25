@@ -9,6 +9,20 @@
 #import "AutoLayoutController.h"
 #import "Masonry.h"
 
+@interface ERView : UIView
+
+@end
+
+@implementation ERView
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+}
+
+@end
+
+
 @interface AutoLayoutController ()
 {
     //__weak IBOutlet UIButton *btn;
@@ -32,8 +46,19 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     
-    //
+    UIView *view = [[ERView alloc] initWithFrame:CGRectMake(60, 60, 300, 200)];
+    view.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:view];
     __weak __typeof(&*self)weakSelf = self;
+    
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.view);
+        make.left.equalTo(weakSelf.view);
+        make.size.mas_equalTo(CGSizeMake(50, 60));
+    }];
+    
+    //
+    
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(weakSelf.view);
         make.size.mas_equalTo(CGSizeMake(50, 100));
@@ -43,6 +68,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
 }
 
 - (void)didReceiveMemoryWarning {
