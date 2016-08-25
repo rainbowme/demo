@@ -19,6 +19,7 @@
 @interface ApproachKVOController ()
 {
     KVOOBJ *obj;
+    NSTimer *timer;
 }
 @end
 
@@ -29,54 +30,49 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [obj addObserver:self forKeyPath:@"index" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [obj removeObserver:self forKeyPath:@"index"];
+}
+
 - (instancetype)init
 {
     self = [super init];
     if(self) {
         self.view.backgroundColor = [UIColor lightGrayColor];
         
-        obj = [KVOOBJ new];
-        [obj addObserver:self forKeyPath:@"index" options:NSKeyValueObservingOptionNew context:NULL];
+        obj = [[KVOOBJ alloc] init];
+        obj.index = 10;
         
-        //
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            obj.index = 10;
-        });
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            obj.index = 11;
-        });
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            obj.index = 13;
-        });
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            obj.index = 16;
-        });
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            obj.index = 18;
-        });
+        timer = [NSTimer timerWithTimeInterval:1 target:self
+                                      selector:@selector(onTimerTick:)
+                                      userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        [timer fire];
     }
     return self;
 }
 
+- (void)onTimerTick:(NSTimer *)timer
+{
+    obj.index++;
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (context == NULL) {
-        
-    } else {
+    if(context) {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
     
     NSInteger index = [[object valueForKey:@"index"] integerValue];
-    if(index==18) {
-        [obj removeObserver:self forKeyPath:@"index"];
-        [self navigationBarMsg:@"Removed_KVO"];
-    } else {
-        [self navigationBarMsg:[@(index) stringValue]];
-    }
+    [self navigationBarMsg:[@(index) stringValue]];
+    [self showFloatText:[@(index) stringValue]];
+    
 }
 
 @end

@@ -12,4 +12,7 @@
 
 - (void)navigationBarMsg:(NSString *)msg;
 
+- (void)showAlertWithMsg:(NSString *)msg;
+
+- (void)showFloatText:(NSString *)msg;
 @end

@@ -46,6 +46,7 @@
 		D01F09361D6D8B7D00431B93 /* AutoLayoutAnimationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F09351D6D8B7D00431B93 /* AutoLayoutAnimationController.storyboard */; };
 		D01F093A1D6D922700431B93 /* AnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F09391D6D922700431B93 /* AnimationController.m */; };
 		D01F093C1D6D925100431B93 /* AnimationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F093B1D6D925100431B93 /* AnimationController.storyboard */; };
+		D01F09401D6EDA1600431B93 /* ReactCocoaController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F093F1D6EDA1600431B93 /* ReactCocoaController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,8 @@
 		D01F09381D6D922700431B93 /* AnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
 		D01F09391D6D922700431B93 /* AnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationController.m; sourceTree = "<group>"; };
 		D01F093B1D6D925100431B93 /* AnimationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AnimationController.storyboard; sourceTree = "<group>"; };
+		D01F093E1D6EDA1600431B93 /* ReactCocoaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactCocoaController.h; sourceTree = "<group>"; };
+		D01F093F1D6EDA1600431B93 /* ReactCocoaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactCocoaController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,7 @@
 		D01F08C71D6AA1D300431B93 /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D01F093D1D6EDA0B00431B93 /* ReactCocoaController */,
 				D01F09371D6D921A00431B93 /* AnimationController */,
 				D01F09311D6D8B6500431B93 /* AutoLayoutAnimationController */,
 				D01F092A1D6D37E700431B93 /* DrawBezierCurveController */,
@@ -372,6 +376,15 @@
 			path = AnimationController;
 			sourceTree = "<group>";
 		};
+		D01F093D1D6EDA0B00431B93 /* ReactCocoaController */ = {
+			isa = PBXGroup;
+			children = (
+				D01F093E1D6EDA1600431B93 /* ReactCocoaController.h */,
+				D01F093F1D6EDA1600431B93 /* ReactCocoaController.m */,
+			);
+			path = ReactCocoaController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,6 +476,7 @@
 				D01F08B51D6AA0EA00431B93 /* AppDelegate.m in Sources */,
 				D01F091D1D6C180200431B93 /* ViewController+MASAdditions.m in Sources */,
 				D01F08F21D6AA1D300431B93 /* OffscreenRenderController.m in Sources */,
+				D01F09401D6EDA1600431B93 /* ReactCocoaController.m in Sources */,
 				D01F08B21D6AA0EA00431B93 /* main.m in Sources */,
 				D01F093A1D6D922700431B93 /* AnimationController.m in Sources */,
 				D01F09201D6C181000431B93 /* AutoLayoutController.m in Sources */,
