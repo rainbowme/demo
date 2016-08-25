@@ -42,6 +42,10 @@
 		D01F09291D6D31AA00431B93 /* DrawGraphicController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F09281D6D31AA00431B93 /* DrawGraphicController.storyboard */; };
 		D01F092D1D6D37F300431B93 /* DrawBezierCurveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F092C1D6D37F300431B93 /* DrawBezierCurveController.m */; };
 		D01F09301D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F092F1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m */; };
+		D01F09341D6D8B7300431B93 /* AutoLayoutAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F09331D6D8B7300431B93 /* AutoLayoutAnimationController.m */; };
+		D01F09361D6D8B7D00431B93 /* AutoLayoutAnimationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F09351D6D8B7D00431B93 /* AutoLayoutAnimationController.storyboard */; };
+		D01F093A1D6D922700431B93 /* AnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F09391D6D922700431B93 /* AnimationController.m */; };
+		D01F093C1D6D925100431B93 /* AnimationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F093B1D6D925100431B93 /* AnimationController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +119,12 @@
 		D01F092C1D6D37F300431B93 /* DrawBezierCurveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBezierCurveController.m; sourceTree = "<group>"; };
 		D01F092E1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DrawGraphicController+RegisterDrawMethod.h"; sourceTree = "<group>"; };
 		D01F092F1D6D585F00431B93 /* DrawGraphicController+RegisterDrawMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DrawGraphicController+RegisterDrawMethod.m"; sourceTree = "<group>"; };
+		D01F09321D6D8B7300431B93 /* AutoLayoutAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutAnimationController.h; sourceTree = "<group>"; };
+		D01F09331D6D8B7300431B93 /* AutoLayoutAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutAnimationController.m; sourceTree = "<group>"; };
+		D01F09351D6D8B7D00431B93 /* AutoLayoutAnimationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AutoLayoutAnimationController.storyboard; sourceTree = "<group>"; };
+		D01F09381D6D922700431B93 /* AnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
+		D01F09391D6D922700431B93 /* AnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationController.m; sourceTree = "<group>"; };
+		D01F093B1D6D925100431B93 /* AnimationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AnimationController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +184,8 @@
 		D01F08C71D6AA1D300431B93 /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D01F09371D6D921A00431B93 /* AnimationController */,
+				D01F09311D6D8B6500431B93 /* AutoLayoutAnimationController */,
 				D01F092A1D6D37E700431B93 /* DrawBezierCurveController */,
 				D01F08F71D6C180200431B93 /* AutoLayoutController */,
 				D01F08C81D6AA1D300431B93 /* ApproachKVOController */,
@@ -340,6 +352,26 @@
 			path = DrawBezierCurveController;
 			sourceTree = "<group>";
 		};
+		D01F09311D6D8B6500431B93 /* AutoLayoutAnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				D01F09321D6D8B7300431B93 /* AutoLayoutAnimationController.h */,
+				D01F09331D6D8B7300431B93 /* AutoLayoutAnimationController.m */,
+				D01F09351D6D8B7D00431B93 /* AutoLayoutAnimationController.storyboard */,
+			);
+			path = AutoLayoutAnimationController;
+			sourceTree = "<group>";
+		};
+		D01F09371D6D921A00431B93 /* AnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				D01F09381D6D922700431B93 /* AnimationController.h */,
+				D01F09391D6D922700431B93 /* AnimationController.m */,
+				D01F093B1D6D925100431B93 /* AnimationController.storyboard */,
+			);
+			path = AnimationController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,8 +431,10 @@
 			files = (
 				D01F08C01D6AA0EA00431B93 /* LaunchScreen.storyboard in Resources */,
 				D01F08BD1D6AA0EA00431B93 /* Assets.xcassets in Resources */,
+				D01F09361D6D8B7D00431B93 /* AutoLayoutAnimationController.storyboard in Resources */,
 				D01F08F31D6AA1D300431B93 /* OffscreenRenderController.storyboard in Resources */,
 				D01F09131D6C180200431B93 /* Info.plist in Resources */,
+				D01F093C1D6D925100431B93 /* AnimationController.storyboard in Resources */,
 				D01F09291D6D31AA00431B93 /* DrawGraphicController.storyboard in Resources */,
 				D01F08BB1D6AA0EA00431B93 /* Main.storyboard in Resources */,
 				D01F09221D6C181900431B93 /* AutoLayoutController.storyboard in Resources */,
@@ -417,6 +451,7 @@
 				D01F08EF1D6AA1D300431B93 /* NSObject+AutoMagicCoding.m in Sources */,
 				D01F08E91D6AA1D300431B93 /* ApproachKVOController.m in Sources */,
 				D01F08EB1D6AA1D300431B93 /* ApproachThreadController+OperationQueue.m in Sources */,
+				D01F09341D6D8B7300431B93 /* AutoLayoutAnimationController.m in Sources */,
 				D01F08ED1D6AA1D300431B93 /* DrawGraphicController.m in Sources */,
 				D01F092D1D6D37F300431B93 /* DrawBezierCurveController.m in Sources */,
 				D01F09181D6C180200431B93 /* MASViewAttribute.m in Sources */,
@@ -429,6 +464,7 @@
 				D01F091D1D6C180200431B93 /* ViewController+MASAdditions.m in Sources */,
 				D01F08F21D6AA1D300431B93 /* OffscreenRenderController.m in Sources */,
 				D01F08B21D6AA0EA00431B93 /* main.m in Sources */,
+				D01F093A1D6D922700431B93 /* AnimationController.m in Sources */,
 				D01F09201D6C181000431B93 /* AutoLayoutController.m in Sources */,
 				D01F08F11D6AA1D300431B93 /* ObjCRuntimeController.m in Sources */,
 				D01F08EC1D6AA1D300431B93 /* ApproachThreadController.m in Sources */,
@@ -553,13 +589,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai howbuy investment service ltd.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ApproachIOS/PrefixHeader.pch;
 				INFOPLIST_FILE = ApproachIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.howbuy.ApproachIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howbuy.howbuyfundtesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "38548cf9-6fab-4ffd-b7be-2fd9e3feb174";
 			};
 			name = Debug;
 		};
@@ -567,13 +605,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai howbuy investment service ltd.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ApproachIOS/PrefixHeader.pch;
 				INFOPLIST_FILE = ApproachIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.howbuy.ApproachIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howbuy.howbuyfundtesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "38548cf9-6fab-4ffd-b7be-2fd9e3feb174";
 			};
 			name = Release;
 		};

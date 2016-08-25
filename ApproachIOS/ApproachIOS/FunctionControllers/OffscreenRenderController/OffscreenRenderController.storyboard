@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDMyCell" rowHeight="107" id="B3Z-uP-j98">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IDMyCell" rowHeight="107" id="B3Z-uP-j98">
                                 <rect key="frame" x="0.0" y="92" width="320" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B3Z-uP-j98" id="4hU-Id-WrG">
@@ -22,22 +22,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_optional" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-Kz-s6c">
-                                            <rect key="frame" x="14" y="0.0" width="43" height="42.5"/>
+                                            <rect key="frame" x="14" y="6" width="43" height="42.5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_optional" translatesAutoresizingMaskIntoConstraints="NO" id="6a3-sE-zZw">
-                                            <rect key="frame" x="75" y="0.0" width="43" height="42.5"/>
+                                            <rect key="frame" x="75" y="6" width="43" height="42.5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_optional" translatesAutoresizingMaskIntoConstraints="NO" id="eT1-ha-hrg">
                                             <rect key="frame" x="75" y="56" width="43" height="42.5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_optional" translatesAutoresizingMaskIntoConstraints="NO" id="Gdo-ds-hVb">
-                                            <rect key="frame" x="139" y="0.0" width="43" height="42.5"/>
+                                            <rect key="frame" x="139" y="6" width="43" height="42.5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_optional" translatesAutoresizingMaskIntoConstraints="NO" id="Lkx-8e-bYc">
-                                            <rect key="frame" x="204" y="0.0" width="43" height="42.5"/>
+                                            <rect key="frame" x="204" y="6" width="43" height="42.5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_optional" translatesAutoresizingMaskIntoConstraints="NO" id="RXD-nZ-Wdd">
-                                            <rect key="frame" x="269" y="0.0" width="43" height="42.5"/>
+                                            <rect key="frame" x="269" y="6" width="43" height="42.5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_optional" translatesAutoresizingMaskIntoConstraints="NO" id="rtI-4N-wHg">
                                             <rect key="frame" x="14" y="56" width="43" height="42.5"/>

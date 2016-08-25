@@ -58,7 +58,8 @@ CLASS_EXPORTS(DrawBezierCurveController) ()
     
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.view];
-    
+    point.x *=2;
+    point.y *=2;
     if(pointArray.count<3) {
         [pointArray addObject:NSStringFromCGPoint(point)];
     }
@@ -85,6 +86,8 @@ CLASS_EXPORTS(DrawBezierCurveController) ()
     
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.view];
+    point.x *=2;
+    point.y *=2;
     if(index>=0) {
         [pointArray removeObjectAtIndex:index];
         [pointArray insertObject:NSStringFromCGPoint(point) atIndex:index];
@@ -114,20 +117,20 @@ CLASS_EXPORTS(DrawBezierCurveController) ()
     CGMutablePathRef path = CGPathCreateMutable();
     
     CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 0);
-    CGPathAddArc(path, &transform, point.x, point.y, 20, 0, 2*M_PI, true);
+    CGPathAddArc(path, &transform, point.x, point.y, 40, 0, 2*M_PI, true);
     return path;
 }
 
 - (UIImage *)drawGraphic
 {
-    CGFloat CGContexWith = self.view.bounds.size.width;
-    CGFloat CGContexHeight = self.view.bounds.size.height;
+    CGFloat CGContexWith = self.view.bounds.size.width*2;
+    CGFloat CGContexHeight = self.view.bounds.size.height*2;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(nil,
                                                  CGContexWith,
                                                  CGContexHeight,
                                                  8,
-                                                 4*CGContexWith*2,
+                                                 4*CGContexWith,
                                                  colorSpace,
                                                  kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);

@@ -36,7 +36,7 @@
     __weak __typeof(&*self)weakSelf = self;
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(weakSelf.view);
-        make.size.mas_equalTo(CGSizeMake(300, 1000));
+        make.size.mas_equalTo(CGSizeMake(50, 100));
     }];
 }
 
@@ -63,10 +63,20 @@
 - (IBAction)onClick:(id)sender
 {
     __weak __typeof(&*self)weakSelf = self;
-    [btn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(weakSelf.view);
-        make.size.equalTo(weakSelf.view);
-    }];
+    static BOOL bFlag = YES;
+    if(bFlag) {
+        bFlag = NO;
+        [btn mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(weakSelf.view);
+            make.size.equalTo(weakSelf.view);
+        }];
+    } else {
+        bFlag = YES;
+        [btn mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(weakSelf.view);
+            make.size.mas_equalTo(CGSizeMake(50, 100));
+        }];
+    }
 }
 
 @end

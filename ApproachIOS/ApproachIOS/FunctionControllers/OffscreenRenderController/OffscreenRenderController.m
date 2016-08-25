@@ -26,13 +26,13 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"IDMyCell"];
     for(NSInteger i = 0; i<20; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*2, 0, 40, 40)];
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            UIImage *image = [UIImage imageNamed:@"add_optional"];
             dispatch_sync(dispatch_get_main_queue(), ^{
-                imageView.image = [UIImage imageNamed:@"add_optional"];
+                imageView.image = image;
                 [cell addSubview:imageView];
             });
         });
@@ -72,10 +72,6 @@
     }
     cell.layer.shouldRasterize = YES;
     cell.layer.rasterizationScale = 2.0f;
-    if(cell) {
-        
-    }
-    
     return cell;
 }
 
