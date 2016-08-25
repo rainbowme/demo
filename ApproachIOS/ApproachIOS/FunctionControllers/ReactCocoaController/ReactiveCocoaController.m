@@ -1,21 +1,23 @@
 //
-//  ReactCocoaController.m
+//  ReactiveCocoaController.m
 //  ApproachIOS
 //
 //  Created by Aurora on 16/8/25.
 //  Copyright © 2016年 howbuy. All rights reserved.
 //
 
-#import "ReactCocoaController.h"
+#import "ReactiveCocoaController.h"
+#import "ReactiveCocoa.h"
 
-@interface ReactCocoaController ()
+@interface ReactiveCocoaController ()
 
 @end
 
-@implementation ReactCocoaController
+@implementation ReactiveCocoaController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 

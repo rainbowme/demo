@@ -1,5 +1,5 @@
 //
-//  ReactCocoaController.h
+//  ReactiveCocoaController.h
 //  ApproachIOS
 //
 //  Created by Aurora on 16/8/25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-CLASS_EXPORTS(ReactCocoaController) : UIViewController
+CLASS_EXPORTS(ReactiveCocoaController) : UIViewController
 
 @end
