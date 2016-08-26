@@ -40,6 +40,15 @@
                                     <constraint firstAttribute="width" constant="240" id="VL1-3y-JHS"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-VS-OBm">
+                                <rect key="frame" x="87" y="347" width="147" height="73"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="nFb-wD-xfr"/>
+                                    <constraint firstAttribute="width" constant="147" id="uWI-b0-Fpm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,10 +56,13 @@
                             <constraint firstItem="GjW-wP-CTm" firstAttribute="centerX" secondItem="zxI-x8-vdi" secondAttribute="centerX" id="1Ji-85-kfO"/>
                             <constraint firstItem="onK-Nq-H06" firstAttribute="centerX" secondItem="zxI-x8-vdi" secondAttribute="centerX" id="VfZ-Da-YQ7"/>
                             <constraint firstItem="GjW-wP-CTm" firstAttribute="top" secondItem="40X-xi-8OF" secondAttribute="bottom" constant="45" id="bjD-3l-CmR"/>
+                            <constraint firstItem="YkC-VS-OBm" firstAttribute="top" secondItem="onK-Nq-H06" secondAttribute="bottom" constant="25" id="cBV-HD-4TW"/>
+                            <constraint firstItem="YkC-VS-OBm" firstAttribute="leading" secondItem="onK-Nq-H06" secondAttribute="leading" id="nUs-aD-epf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btn" destination="onK-Nq-H06" id="Een-PD-9mr"/>
+                        <outlet property="btn2" destination="YkC-VS-OBm" id="xgZ-cl-yg9"/>
                         <outlet property="dview" destination="GjW-wP-CTm" id="tqo-23-pwc"/>
                     </connections>
                 </viewController>

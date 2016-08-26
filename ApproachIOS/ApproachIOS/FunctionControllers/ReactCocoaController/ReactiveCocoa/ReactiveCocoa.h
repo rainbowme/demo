@@ -63,16 +63,16 @@ FOUNDATION_EXPORT const unsigned char ReactiveCocoaVersionString[];
 
 //#if TARGET_OS_WATCH
 //#elif TARGET_OS_IOS || TARGET_OS_TV
-//	#import <ReactiveCocoa/UIBarButtonItem+RACCommandSupport.h>
-//	#import <ReactiveCocoa/UIButton+RACCommandSupport.h>
-//	#import <ReactiveCocoa/UICollectionReusableView+RACSignalSupport.h>
-//	#import <ReactiveCocoa/UIControl+RACSignalSupport.h>
-//	#import <ReactiveCocoa/UIGestureRecognizer+RACSignalSupport.h>
-//	#import <ReactiveCocoa/UISegmentedControl+RACSignalSupport.h>
-//	#import <ReactiveCocoa/UITableViewCell+RACSignalSupport.h>
-//	#import <ReactiveCocoa/UITableViewHeaderFooterView+RACSignalSupport.h>
-//	#import <ReactiveCocoa/UITextField+RACSignalSupport.h>
-//	#import <ReactiveCocoa/UITextView+RACSignalSupport.h>
+	#import "UIBarButtonItem+RACCommandSupport.h"
+	#import "UIButton+RACCommandSupport.h"
+	#import "UICollectionReusableView+RACSignalSupport.h"
+	#import "UIControl+RACSignalSupport.h"
+	#import "UIGestureRecognizer+RACSignalSupport.h"
+	#import "UISegmentedControl+RACSignalSupport.h"
+	#import "UITableViewCell+RACSignalSupport.h"
+	#import "UITableViewHeaderFooterView+RACSignalSupport.h"
+	#import "UITextField+RACSignalSupport.h"
+	#import "UITextView+RACSignalSupport.h"
 //
 //	#if TARGET_OS_IOS
 //		#import <ReactiveCocoa/NSURLConnection+RACSupport.h>

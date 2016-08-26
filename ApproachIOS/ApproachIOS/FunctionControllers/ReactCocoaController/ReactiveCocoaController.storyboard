@@ -16,8 +16,27 @@
                     <view key="view" contentMode="scaleToFill" id="eQg-D4-V6r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8k-fA-pzt">
+                                <rect key="frame" x="36" y="52" width="248" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-iY-89r">
+                                <rect key="frame" x="96" y="151" width="129" height="51"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.2901960784" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onSiganlClick:" destination="64P-eL-hFA" eventType="touchUpInside" id="Bj9-qh-6jV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="btn" destination="D2E-iY-89r" id="VIV-LX-w0n"/>
+                        <outlet property="textField" destination="y8k-fA-pzt" id="yiU-yq-wl0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgR-cR-12K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

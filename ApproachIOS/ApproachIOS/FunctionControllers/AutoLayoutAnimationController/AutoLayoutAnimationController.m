@@ -10,8 +10,9 @@
 
 @interface AutoLayoutAnimationController ()
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
 @property (weak, nonatomic) IBOutlet UIView *dview;
-//int ptrace(int request, int pid, int addr, int data);@property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttons;
+//@property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttons;
 @end
 
 @implementation AutoLayoutAnimationController
@@ -27,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [_btn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_btn2 addTarget:self action:@selector(onClick2:) forControlEvents:UIControlEventTouchUpInside];
     
     self.dview.layer.borderWidth = 2.0f;
     self.dview.layer.borderColor = [UIColor greenColor].CGColor;
@@ -50,7 +52,11 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
+    NSLog(@"%s : %f %f %f %f", __FUNCTION__, _dview.frame.origin.x, _dview.frame.origin.y,
+          _dview.frame.size.width, _dview.frame.size.height);
 }
+
 /*
 #pragma mark - Navigation
 
@@ -63,15 +69,36 @@
 
 - (void)onClick:(UIButton *)sender
 {
-    [UIView animateWithDuration:0.5f
+    [UIView animateWithDuration:0.25f
                           delay:0.0f
          usingSpringWithDamping:1.0f initialSpringVelocity:0.0f
                         options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{
-        self.dview.bounds = CGRectMake(0, 10, self.dview.bounds.size.width, self.dview.bounds.size.height);
-    } completion:^(BOOL finished) {
-        
-    }];
+                     animations:^()
+     {
+         self.dview.bounds = CGRectMake(0, 10, self.dview.bounds.size.width, self.dview.bounds.size.height);
+         //[self.dview layoutIfNeeded];
+         [self.view setNeedsLayout];
+     } completion:^(BOOL finished) {
+         [UIView animateWithDuration:0.25f animations:^{
+             self.dview.bounds = CGRectMake(0, 0, self.dview.bounds.size.width, self.dview.bounds.size.height);
+         }];
+     }];
+}
+
+- (void)onClick2:(UIButton *)sender
+{
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+         usingSpringWithDamping:1.0f initialSpringVelocity:0.0f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^()
+     {
+         self.dview.transform = CGAffineTransformMakeScale(0.1, 0.1);
+//         [self.dview layoutIfNeeded];
+         [self.view setNeedsLayout];
+     } completion:^(BOOL finished) {
+         self.dview.transform = CGAffineTransformIdentity;
+     }];
 }
 
 @end
