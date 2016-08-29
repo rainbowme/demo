@@ -15,6 +15,11 @@
 }
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+
+#pragma mark Test2
+@property (weak, nonatomic) IBOutlet UIButton *test2Btn;
+@property (weak, nonatomic) IBOutlet UITextField *text2_0Field;
+@property (weak, nonatomic) IBOutlet UITextField *text2_1Field;
 @end
 
 @implementation ReactiveCocoaController
@@ -30,6 +35,37 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onGestureAction:)];
+    [self.view addGestureRecognizer:gesture];
+    
+    //
+    [self activeTest1];
+    
+    [self activeTest2];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)onGestureAction:(UIGestureRecognizer *)gesture
+{
+    [self.view endEditing:YES];
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+- (void)activeTest1
+{
     // 1.
     siganl = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         // 1.block调用时刻：每当有订阅者订阅信号，就会调用block。
@@ -69,21 +105,6 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)onSiganlClick:(id)sender
 {
     // 3.订阅信号,才会激活信号.
@@ -91,6 +112,22 @@
         // block调用时刻：每当有信号发出数据，就会调用block.
         NSLog(@"接收到数据:%@",x);
     }];
+}
+
+
+#pragma mark
+
+- (void)activeTest2
+{
+    RAC(self.test2Btn, enabled) = [RACSignal combineLatest:@[self.text2_0Field.rac_textSignal, self.text2_1Field.rac_textSignal]
+                                                    reduce:^(NSString *username, NSString *password) {
+                                                          return @(username.length > 2 && password.length > 2);
+                                                    }];
+}
+
+- (IBAction)onClick2:(id)sender
+{
+    
 }
 
 @end
