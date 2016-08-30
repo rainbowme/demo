@@ -24,7 +24,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-iY-89r">
-                                <rect key="frame" x="96" y="151" width="129" height="51"/>
+                                <rect key="frame" x="96" y="90" width="129" height="51"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.2901960784" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-KM-o7n">
-                                <rect key="frame" x="20" y="243" width="280" height="183"/>
+                                <rect key="frame" x="20" y="159" width="280" height="183"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xa4-RI-GWQ">
                                         <rect key="frame" x="25" y="16" width="229" height="30"/>
@@ -62,8 +62,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="NG1-KM-o7n" secondAttribute="leading" id="Har-2j-ll4"/>
-                            <constraint firstItem="NG1-KM-o7n" firstAttribute="top" secondItem="D2E-iY-89r" secondAttribute="bottom" constant="41" id="ISF-r7-CX7"/>
-                            <constraint firstItem="D2E-iY-89r" firstAttribute="top" secondItem="0EN-hB-gqa" secondAttribute="bottom" constant="131" id="tY9-PG-YSO"/>
+                            <constraint firstItem="NG1-KM-o7n" firstAttribute="top" secondItem="D2E-iY-89r" secondAttribute="bottom" constant="18" id="ISF-r7-CX7"/>
+                            <constraint firstItem="D2E-iY-89r" firstAttribute="top" secondItem="0EN-hB-gqa" secondAttribute="bottom" constant="70" id="tY9-PG-YSO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NG1-KM-o7n" secondAttribute="trailing" id="zO4-9s-SiM"/>
                         </constraints>
                     </view>

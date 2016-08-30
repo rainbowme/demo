@@ -614,6 +614,7 @@
 		D01F09231D6C1B0D00431B93 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D01F0B821D7405F300431B93 /* NSObject+Extension */,
 				D01F09241D6C1B2A00431B93 /* UIViewController+Extension */,
 			);
 			path = Common;
@@ -680,51 +681,10 @@
 		D01F0A661D6EE9EF00431B93 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				D01F0B811D73DF4400431B93 /* Extensions */,
 				D01F0A671D6EE9EF00431B93 /* extobjc */,
 				D01F0A6D1D6EE9EF00431B93 /* MKAnnotationView+RACSignalSupport.h */,
 				D01F0A6E1D6EE9EF00431B93 /* MKAnnotationView+RACSignalSupport.m */,
-				D01F0A6F1D6EE9EF00431B93 /* NSArray+RACSequenceAdditions.h */,
-				D01F0A701D6EE9EF00431B93 /* NSArray+RACSequenceAdditions.m */,
-				D01F0A711D6EE9EF00431B93 /* NSData+RACSupport.h */,
-				D01F0A721D6EE9EF00431B93 /* NSData+RACSupport.m */,
-				D01F0A731D6EE9EF00431B93 /* NSDictionary+RACSequenceAdditions.h */,
-				D01F0A741D6EE9EF00431B93 /* NSDictionary+RACSequenceAdditions.m */,
-				D01F0A751D6EE9EF00431B93 /* NSEnumerator+RACSequenceAdditions.h */,
-				D01F0A761D6EE9EF00431B93 /* NSEnumerator+RACSequenceAdditions.m */,
-				D01F0A771D6EE9EF00431B93 /* NSFileHandle+RACSupport.h */,
-				D01F0A781D6EE9EF00431B93 /* NSFileHandle+RACSupport.m */,
-				D01F0A791D6EE9EF00431B93 /* NSIndexSet+RACSequenceAdditions.h */,
-				D01F0A7A1D6EE9EF00431B93 /* NSIndexSet+RACSequenceAdditions.m */,
-				D01F0A7B1D6EE9EF00431B93 /* NSInvocation+RACTypeParsing.h */,
-				D01F0A7C1D6EE9EF00431B93 /* NSInvocation+RACTypeParsing.m */,
-				D01F0A7D1D6EE9EF00431B93 /* NSNotificationCenter+RACSupport.h */,
-				D01F0A7E1D6EE9EF00431B93 /* NSNotificationCenter+RACSupport.m */,
-				D01F0A7F1D6EE9EF00431B93 /* NSObject+RACDeallocating.h */,
-				D01F0A801D6EE9EF00431B93 /* NSObject+RACDeallocating.m */,
-				D01F0A811D6EE9EF00431B93 /* NSObject+RACDescription.h */,
-				D01F0A821D6EE9EF00431B93 /* NSObject+RACDescription.m */,
-				D01F0A831D6EE9EF00431B93 /* NSObject+RACKVOWrapper.h */,
-				D01F0A841D6EE9EF00431B93 /* NSObject+RACKVOWrapper.m */,
-				D01F0A851D6EE9EF00431B93 /* NSObject+RACLifting.h */,
-				D01F0A861D6EE9EF00431B93 /* NSObject+RACLifting.m */,
-				D01F0A871D6EE9EF00431B93 /* NSObject+RACPropertySubscribing.h */,
-				D01F0A881D6EE9EF00431B93 /* NSObject+RACPropertySubscribing.m */,
-				D01F0A891D6EE9EF00431B93 /* NSObject+RACSelectorSignal.h */,
-				D01F0A8A1D6EE9EF00431B93 /* NSObject+RACSelectorSignal.m */,
-				D01F0A8B1D6EE9EF00431B93 /* NSOrderedSet+RACSequenceAdditions.h */,
-				D01F0A8C1D6EE9EF00431B93 /* NSOrderedSet+RACSequenceAdditions.m */,
-				D01F0A8D1D6EE9EF00431B93 /* NSSet+RACSequenceAdditions.h */,
-				D01F0A8E1D6EE9EF00431B93 /* NSSet+RACSequenceAdditions.m */,
-				D01F0A8F1D6EE9EF00431B93 /* NSString+RACKeyPathUtilities.h */,
-				D01F0A901D6EE9EF00431B93 /* NSString+RACKeyPathUtilities.m */,
-				D01F0A911D6EE9EF00431B93 /* NSString+RACSequenceAdditions.h */,
-				D01F0A921D6EE9EF00431B93 /* NSString+RACSequenceAdditions.m */,
-				D01F0A931D6EE9EF00431B93 /* NSString+RACSupport.h */,
-				D01F0A941D6EE9EF00431B93 /* NSString+RACSupport.m */,
-				D01F0A951D6EE9EF00431B93 /* NSURLConnection+RACSupport.h */,
-				D01F0A961D6EE9EF00431B93 /* NSURLConnection+RACSupport.m */,
-				D01F0A971D6EE9EF00431B93 /* NSUserDefaults+RACSupport.h */,
-				D01F0A981D6EE9EF00431B93 /* NSUserDefaults+RACSupport.m */,
 				D01F0A991D6EE9EF00431B93 /* RACArraySequence.h */,
 				D01F0A9A1D6EE9EF00431B93 /* RACArraySequence.m */,
 				D01F0A9B1D6EE9EF00431B93 /* RACBehaviorSubject.h */,
@@ -826,6 +786,25 @@
 				D01F0AFB1D6EE9EF00431B93 /* RACValueTransformer.h */,
 				D01F0AFC1D6EE9EF00431B93 /* RACValueTransformer.m */,
 				D01F0AFD1D6EE9EF00431B93 /* ReactiveCocoa-Bridging-Header.h */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		D01F0A671D6EE9EF00431B93 /* extobjc */ = {
+			isa = PBXGroup;
+			children = (
+				D01F0A681D6EE9EF00431B93 /* EXTKeyPathCoding.h */,
+				D01F0A691D6EE9EF00431B93 /* EXTRuntimeExtensions.h */,
+				D01F0A6A1D6EE9EF00431B93 /* EXTRuntimeExtensions.m */,
+				D01F0A6B1D6EE9EF00431B93 /* EXTScope.h */,
+				D01F0A6C1D6EE9EF00431B93 /* metamacros.h */,
+			);
+			path = extobjc;
+			sourceTree = "<group>";
+		};
+		D01F0B811D73DF4400431B93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				D01F0AFE1D6EE9EF00431B93 /* UIActionSheet+RACSignalSupport.h */,
 				D01F0AFF1D6EE9EF00431B93 /* UIActionSheet+RACSignalSupport.m */,
 				D01F0B001D6EE9EF00431B93 /* UIAlertView+RACSignalSupport.h */,
@@ -864,20 +843,57 @@
 				D01F0B211D6EE9EF00431B93 /* UITextField+RACSignalSupport.m */,
 				D01F0B221D6EE9EF00431B93 /* UITextView+RACSignalSupport.h */,
 				D01F0B231D6EE9EF00431B93 /* UITextView+RACSignalSupport.m */,
+				D01F0A6F1D6EE9EF00431B93 /* NSArray+RACSequenceAdditions.h */,
+				D01F0A701D6EE9EF00431B93 /* NSArray+RACSequenceAdditions.m */,
+				D01F0A711D6EE9EF00431B93 /* NSData+RACSupport.h */,
+				D01F0A721D6EE9EF00431B93 /* NSData+RACSupport.m */,
+				D01F0A731D6EE9EF00431B93 /* NSDictionary+RACSequenceAdditions.h */,
+				D01F0A741D6EE9EF00431B93 /* NSDictionary+RACSequenceAdditions.m */,
+				D01F0A751D6EE9EF00431B93 /* NSEnumerator+RACSequenceAdditions.h */,
+				D01F0A761D6EE9EF00431B93 /* NSEnumerator+RACSequenceAdditions.m */,
+				D01F0A771D6EE9EF00431B93 /* NSFileHandle+RACSupport.h */,
+				D01F0A781D6EE9EF00431B93 /* NSFileHandle+RACSupport.m */,
+				D01F0A791D6EE9EF00431B93 /* NSIndexSet+RACSequenceAdditions.h */,
+				D01F0A7A1D6EE9EF00431B93 /* NSIndexSet+RACSequenceAdditions.m */,
+				D01F0A7B1D6EE9EF00431B93 /* NSInvocation+RACTypeParsing.h */,
+				D01F0A7C1D6EE9EF00431B93 /* NSInvocation+RACTypeParsing.m */,
+				D01F0A7D1D6EE9EF00431B93 /* NSNotificationCenter+RACSupport.h */,
+				D01F0A7E1D6EE9EF00431B93 /* NSNotificationCenter+RACSupport.m */,
+				D01F0A7F1D6EE9EF00431B93 /* NSObject+RACDeallocating.h */,
+				D01F0A801D6EE9EF00431B93 /* NSObject+RACDeallocating.m */,
+				D01F0A811D6EE9EF00431B93 /* NSObject+RACDescription.h */,
+				D01F0A821D6EE9EF00431B93 /* NSObject+RACDescription.m */,
+				D01F0A831D6EE9EF00431B93 /* NSObject+RACKVOWrapper.h */,
+				D01F0A841D6EE9EF00431B93 /* NSObject+RACKVOWrapper.m */,
+				D01F0A851D6EE9EF00431B93 /* NSObject+RACLifting.h */,
+				D01F0A861D6EE9EF00431B93 /* NSObject+RACLifting.m */,
+				D01F0A871D6EE9EF00431B93 /* NSObject+RACPropertySubscribing.h */,
+				D01F0A881D6EE9EF00431B93 /* NSObject+RACPropertySubscribing.m */,
+				D01F0A891D6EE9EF00431B93 /* NSObject+RACSelectorSignal.h */,
+				D01F0A8A1D6EE9EF00431B93 /* NSObject+RACSelectorSignal.m */,
+				D01F0A8B1D6EE9EF00431B93 /* NSOrderedSet+RACSequenceAdditions.h */,
+				D01F0A8C1D6EE9EF00431B93 /* NSOrderedSet+RACSequenceAdditions.m */,
+				D01F0A8D1D6EE9EF00431B93 /* NSSet+RACSequenceAdditions.h */,
+				D01F0A8E1D6EE9EF00431B93 /* NSSet+RACSequenceAdditions.m */,
+				D01F0A8F1D6EE9EF00431B93 /* NSString+RACKeyPathUtilities.h */,
+				D01F0A901D6EE9EF00431B93 /* NSString+RACKeyPathUtilities.m */,
+				D01F0A911D6EE9EF00431B93 /* NSString+RACSequenceAdditions.h */,
+				D01F0A921D6EE9EF00431B93 /* NSString+RACSequenceAdditions.m */,
+				D01F0A931D6EE9EF00431B93 /* NSString+RACSupport.h */,
+				D01F0A941D6EE9EF00431B93 /* NSString+RACSupport.m */,
+				D01F0A951D6EE9EF00431B93 /* NSURLConnection+RACSupport.h */,
+				D01F0A961D6EE9EF00431B93 /* NSURLConnection+RACSupport.m */,
+				D01F0A971D6EE9EF00431B93 /* NSUserDefaults+RACSupport.h */,
+				D01F0A981D6EE9EF00431B93 /* NSUserDefaults+RACSupport.m */,
 			);
-			path = "Objective-C";
+			name = Extensions;
 			sourceTree = "<group>";
 		};
-		D01F0A671D6EE9EF00431B93 /* extobjc */ = {
+		D01F0B821D7405F300431B93 /* NSObject+Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D01F0A681D6EE9EF00431B93 /* EXTKeyPathCoding.h */,
-				D01F0A691D6EE9EF00431B93 /* EXTRuntimeExtensions.h */,
-				D01F0A6A1D6EE9EF00431B93 /* EXTRuntimeExtensions.m */,
-				D01F0A6B1D6EE9EF00431B93 /* EXTScope.h */,
-				D01F0A6C1D6EE9EF00431B93 /* metamacros.h */,
 			);
-			path = extobjc;
+			path = "NSObject+Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1190,6 +1206,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai howbuy investment service ltd.";
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ApproachIOS/PrefixHeader.pch;
 				INFOPLIST_FILE = ApproachIOS/Info.plist;
@@ -1206,6 +1223,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai howbuy investment service ltd.";
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ApproachIOS/PrefixHeader.pch;
 				INFOPLIST_FILE = ApproachIOS/Info.plist;

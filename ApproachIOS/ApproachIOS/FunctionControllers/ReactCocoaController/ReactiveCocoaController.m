@@ -9,10 +9,71 @@
 #import "ReactiveCocoaController.h"
 #import "ReactiveCocoa.h"
 
+#include <objc/runtime.h>
+#include <objc/message.h>
+
+@interface UIView (TouchedView)
+
+@end
+
+@implementation UIView (TouchedView)
+
+static UIView *activeView(id self, SEL _cmd, id value1)
+{
+    struct objc_super superclazz = {
+        .receiver = self,
+        .super_class = class_getSuperclass(object_getClass(self))
+    };
+    
+    // cast our pointer so the compiler won't complain
+    //void (*objc_msgSendSuperCasted)(void *, SEL, id, id) = (void *)objc_msgSendSuper;
+    
+    // call super's setter, which is original class's setter method
+    id obj = objc_msgSendSuper(&superclazz, _cmd, value1);
+    
+    void(^block)(UIView * view) = objc_getAssociatedObject(self, _cmd);
+    if(block && self!=obj) {
+        block(obj);
+    }
+    
+    return obj;
+}
+
+- (void)touchedView:(void(^)(UIView * view))block
+{
+    Class aSuperClass = object_getClass(self);
+    Class newClass = objc_allocateClassPair(aSuperClass, "__TMP_UIView", 0);
+    
+    SEL aSel = @selector(hitTest:withEvent:);
+    Method md = class_getInstanceMethod(aSuperClass, aSel);
+    const char *types = method_getTypeEncoding(md);
+    class_addMethod(newClass, aSel, (IMP)activeView, types);
+    
+    objc_registerClassPair(newClass);
+    
+    //
+    object_setClass(self, newClass);
+    
+    objc_setAssociatedObject(self, aSel, block, OBJC_ASSOCIATION_COPY);
+}
+
+//- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+//{
+//    return [super pointInside:point withEvent:event];
+//}
+//
+//- (nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event
+//{
+//    return [super hitTest:point withEvent:event];
+//}
+
+@end
+
 @interface ReactiveCocoaController ()
 {
     RACSignal *siganl;
 }
+#pragma mark Test1
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
@@ -43,6 +104,15 @@
     [self activeTest1];
     
     [self activeTest2];
+    
+    
+    [self.view touchedView:^(UIView *view) {
+        view.layer.shadowColor = [UIColor redColor].CGColor;//shadowColor阴影颜色
+        //shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
+        view.layer.shadowOffset = CGSizeMake(4, 4);
+        view.layer.shadowOpacity = 0.8;//阴影透明度，默认0
+        view.layer.shadowRadius = 4;//阴影半径，默认3
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +123,11 @@
 - (void)onGestureAction:(UIGestureRecognizer *)gesture
 {
     [self.view endEditing:YES];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    
 }
 
 /*
@@ -94,13 +169,14 @@
     }];
     
     // 4.把监听到的通知转换信号
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(id x) {
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification
+                                                           object:nil] subscribeNext:^(id x)
+    {
         NSLog(@"键盘弹出");
     }];
     
     // 5.监听文本框的文字改变
     [[self.textField rac_textSignal] subscribeNext:^(id x) {
-        
         NSLog(@"文字改变了%@",x);
     }];
 }
@@ -113,7 +189,6 @@
         NSLog(@"接收到数据:%@",x);
     }];
 }
-
 
 #pragma mark
 

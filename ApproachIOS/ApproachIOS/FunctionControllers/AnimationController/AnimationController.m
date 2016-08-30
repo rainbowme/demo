@@ -11,6 +11,7 @@
 @interface AnimationController ()
 {
     IBOutlet __weak UIButton *btn;
+    IBOutlet __weak UIScrollView *scview;
 }
 @end
 
@@ -28,6 +29,45 @@
     // Do any additional setup after loading the view.
     
     [btn addTarget:self action:@selector(onClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+#if 0
+    CGSize size = scview.frame.size;
+    scview.contentSize = CGSizeMake((size.width-40)*2, size.height);
+    scview.pagingEnabled = YES;
+    scview.backgroundColor = [UIColor lightGrayColor];
+    
+    // 1
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 15, size.width-40, size.height-30)];
+    view.backgroundColor = [UIColor greenColor];
+    [scview addSubview:view];
+    
+    // 2
+    view = [[UIView alloc] initWithFrame:CGRectMake(size.width-40, 15, size.width-40, size.height-30)];
+    view.backgroundColor = [UIColor redColor];
+    [scview addSubview:view];
+#else
+    CGSize size = scview.frame.size;
+    scview.contentSize = CGSizeMake((size.width-40)*2, size.height);
+    scview.pagingEnabled = YES;
+    
+    scview.backgroundColor = [UIColor lightGrayColor];
+    
+    // 1
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 15, size.width-40, size.height-30)];
+    view.backgroundColor = [UIColor greenColor];
+    [scview addSubview:view];
+    
+    // 2
+    CGFloat mid = (size.width*3-(size.width-80))/2;
+    view = [[UIView alloc] initWithFrame:CGRectMake(size.width-40, 15, size.width-40, size.height-30)];
+    view.backgroundColor = [UIColor redColor];
+    [scview addSubview:view];
+    
+    // 3
+    view = [[UIView alloc] initWithFrame:CGRectMake(size.width*2-40, 15, size.width-20, size.height-30)];
+    view.backgroundColor = [UIColor blueColor];
+//    [scview addSubview:view];
+#endif
 }
 
 - (void)didReceiveMemoryWarning {
