@@ -10,5 +10,6 @@
 
 @interface ApproachThreadController (GCD)
 
-- (void)gcdDemo;
+- (void)registerGCDMethodsWithLog:(BOOL)bFlag;
+
 @end

@@ -138,6 +138,8 @@
 		D01F0B7D1D6EE9EF00431B93 /* UITextField+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F0B211D6EE9EF00431B93 /* UITextField+RACSignalSupport.m */; };
 		D01F0B7E1D6EE9EF00431B93 /* UITextView+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F0B231D6EE9EF00431B93 /* UITextView+RACSignalSupport.m */; };
 		D01F0B801D6EEB3000431B93 /* ReactiveCocoaController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01F0B7F1D6EEB3000431B93 /* ReactiveCocoaController.storyboard */; };
+		D08587DE1D766751002E4FB6 /* ApproachThreadController+NSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = D08587DD1D766751002E4FB6 /* ApproachThreadController+NSThread.m */; };
+		D08587E11D766F62002E4FB6 /* NSObject+SwitcherLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D08587E01D766F62002E4FB6 /* NSObject+SwitcherLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -409,6 +411,10 @@
 		D01F0B231D6EE9EF00431B93 /* UITextView+RACSignalSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+RACSignalSupport.m"; sourceTree = "<group>"; };
 		D01F0B241D6EE9EF00431B93 /* ReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactiveCocoa.h; sourceTree = "<group>"; };
 		D01F0B7F1D6EEB3000431B93 /* ReactiveCocoaController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReactiveCocoaController.storyboard; sourceTree = "<group>"; };
+		D08587DC1D766751002E4FB6 /* ApproachThreadController+NSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ApproachThreadController+NSThread.h"; sourceTree = "<group>"; };
+		D08587DD1D766751002E4FB6 /* ApproachThreadController+NSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ApproachThreadController+NSThread.m"; sourceTree = "<group>"; };
+		D08587DF1D766F62002E4FB6 /* NSObject+SwitcherLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwitcherLog.h"; sourceTree = "<group>"; };
+		D08587E01D766F62002E4FB6 /* NSObject+SwitcherLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwitcherLog.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,10 +502,12 @@
 		D01F08CB1D6AA1D300431B93 /* ApproachThreadController */ = {
 			isa = PBXGroup;
 			children = (
-				D01F08CC1D6AA1D300431B93 /* ApproachThreadController+GCD.h */,
-				D01F08CD1D6AA1D300431B93 /* ApproachThreadController+GCD.m */,
+				D08587DC1D766751002E4FB6 /* ApproachThreadController+NSThread.h */,
+				D08587DD1D766751002E4FB6 /* ApproachThreadController+NSThread.m */,
 				D01F08CE1D6AA1D300431B93 /* ApproachThreadController+OperationQueue.h */,
 				D01F08CF1D6AA1D300431B93 /* ApproachThreadController+OperationQueue.m */,
+				D01F08CC1D6AA1D300431B93 /* ApproachThreadController+GCD.h */,
+				D01F08CD1D6AA1D300431B93 /* ApproachThreadController+GCD.m */,
 				D01F08D01D6AA1D300431B93 /* ApproachThreadController.h */,
 				D01F08D11D6AA1D300431B93 /* ApproachThreadController.m */,
 			);
@@ -521,9 +529,9 @@
 		D01F08D51D6AA1D300431B93 /* Module2ObjController */ = {
 			isa = PBXGroup;
 			children = (
+				D01F08D81D6AA1D300431B93 /* NSObject+AutoMagicCoding */,
 				D01F08D61D6AA1D300431B93 /* Module2ObjController.h */,
 				D01F08D71D6AA1D300431B93 /* Module2ObjController.m */,
-				D01F08D81D6AA1D300431B93 /* NSObject+AutoMagicCoding */,
 			);
 			path = Module2ObjController;
 			sourceTree = "<group>";
@@ -892,6 +900,8 @@
 		D01F0B821D7405F300431B93 /* NSObject+Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D08587DF1D766F62002E4FB6 /* NSObject+SwitcherLog.h */,
+				D08587E01D766F62002E4FB6 /* NSObject+SwitcherLog.m */,
 			);
 			path = "NSObject+Extension";
 			sourceTree = "<group>";
@@ -990,6 +1000,7 @@
 				D01F0B401D6EE9EF00431B93 /* RACCommand.m in Sources */,
 				D01F0B461D6EE9EF00431B93 /* RACDynamicSignal.m in Sources */,
 				D01F09181D6C180200431B93 /* MASViewAttribute.m in Sources */,
+				D08587E11D766F62002E4FB6 /* NSObject+SwitcherLog.m in Sources */,
 				D01F09171D6C180200431B93 /* MASLayoutConstraint.m in Sources */,
 				D01F091B1D6C180200431B93 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				D01F0B781D6EE9EF00431B93 /* UISlider+RACSignalSupport.m in Sources */,
@@ -1087,6 +1098,7 @@
 				D01F0B4A1D6EE9EF00431B93 /* RACErrorSignal.m in Sources */,
 				D01F0B311D6EE9EF00431B93 /* NSObject+RACKVOWrapper.m in Sources */,
 				D01F09151D6C180200431B93 /* MASConstraint.m in Sources */,
+				D08587DE1D766751002E4FB6 /* ApproachThreadController+NSThread.m in Sources */,
 				D01F0B741D6EE9EF00431B93 /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
 				D01F0B6B1D6EE9EF00431B93 /* RACValueTransformer.m in Sources */,
 				D01F0B441D6EE9EF00431B93 /* RACDisposable.m in Sources */,

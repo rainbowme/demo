@@ -10,9 +10,6 @@
 
 @interface ApproachThreadController (OperationQueue)
 
-#pragma mark - NSBlockOperation
-- (void)blockOperation;
+- (void)registerOpQueueMethodsWithLog:(BOOL)bFlag;
 
-#pragma mark - NSOperationQueue
-- (void)operationQueue;
 @end

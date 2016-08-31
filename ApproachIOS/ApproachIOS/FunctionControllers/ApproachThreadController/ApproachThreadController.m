@@ -7,6 +7,7 @@
 //
 
 #import "ApproachThreadController.h"
+#import "ApproachThreadController+NSThread.h"
 #import "ApproachThreadController+OperationQueue.h"
 #import "ApproachThreadController+GCD.h"
 
@@ -21,9 +22,14 @@ CLASS_EXPORTS(ApproachThreadController) ()
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lightGrayColor];
 
-    //[self operationQueue];
-    //[self blockOperation];
-    [self gcdDemo];
+    // 1.
+    [self registerOpQueueMethodsWithLog:NO];
+
+    // 2.
+    [self registerGCDMethodsWithLog:YES];
+    
+    // 3.
+    [self registerThreadMethodsWithLog:NO];
 }
 
 - (void)didReceiveMemoryWarning {

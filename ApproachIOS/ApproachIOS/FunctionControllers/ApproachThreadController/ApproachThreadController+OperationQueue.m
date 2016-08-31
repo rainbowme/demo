@@ -8,26 +8,40 @@
 
 #import "ApproachThreadController+OperationQueue.h"
 
+static BOOL gFlag = YES;
+#define NSLog(...) showLog(gFlag, __VA_ARGS__);
+
 @implementation ApproachThreadController (OperationQueue)
+
+- (void)registerOpQueueMethodsWithLog:(BOOL)bFlag
+{
+    @synchronized (self) {
+        gFlag = bFlag;
+    }
+    
+    [self blockOperation];
+    
+    [self operationQueue];
+}
 
 #pragma mark - NSBlockOperation
 - (void)blockOperation
 {
-    NSLog(@"block operation start");
+    NSLog(@"NSOperationQueue: block operation start");
 #if 0
     NSBlockOperation *bop2 = [NSBlockOperation blockOperationWithBlock:^{
         sleep(3);
-        NSLog(@"block operation %@",[NSThread currentThread]);
+        NSLog(@"NSOperationQueue: block operation %@",[NSThread currentThread]);
     }];
 #else
     NSBlockOperation *bop2 = [[NSBlockOperation alloc] init];
     [bop2 addExecutionBlock:^{
-        sleep(2);
-        NSLog(@"block operation %@",[NSThread currentThread]);
+        //sleep(2);
+        NSLog(@"NSOperationQueue: block operation %@",[NSThread currentThread]);
     }];
 #endif
     [bop2 setCompletionBlock:^{
-        NSLog(@"block operation OK !!");
+        NSLog(@"NSOperationQueue: block operation OK !!");
     }];
     [bop2 start];
 }
@@ -45,7 +59,7 @@
     for(NSInteger i=0; i<20; i++) {
         [operationQueue addOperationWithBlock:^{
             sleep(3);
-            NSLog(@"%p", [NSThread currentThread]);
+            NSLog(@"NSOperationQueue: %p", [NSThread currentThread]);
         }];
     }
 }
