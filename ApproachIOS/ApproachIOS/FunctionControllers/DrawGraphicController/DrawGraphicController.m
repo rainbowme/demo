@@ -131,7 +131,7 @@ CLASS_EXPORTS(DrawGraphicController) ()
     CGFloat CGContexWith = self.imageView.bounds.size.width*scale;
     CGFloat CGContexHeight = self.imageView.bounds.size.height*scale;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(nil,
+    CGContextRef context = CGBitmapContextCreate(NULL,
                                                  CGContexWith,
                                                  CGContexHeight,
                                                  8,
@@ -152,6 +152,8 @@ CLASS_EXPORTS(DrawGraphicController) ()
     
     
     CGImageRef imageRef = CGBitmapContextCreateImage(context);
+    CGContextRelease(context);
+    
     self.imageView.image = [UIImage imageWithCGImage:imageRef];
 }
 

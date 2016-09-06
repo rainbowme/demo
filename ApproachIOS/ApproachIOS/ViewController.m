@@ -125,6 +125,10 @@ static Class rich_class(id self, SEL _cmd)
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:11 inSection:0];
+        [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
+    });
 }
 
 - (void)viewDidLayoutSubviews

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C463A7311D7D9DC900AA659D /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C463A7301D7D9DC900AA659D /* CubeViewController.m */; };
+		C4A395D51D7C5F74009869C6 /* BlendLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A395D41D7C5F74009869C6 /* BlendLayerController.m */; };
 		D01F08B21D6AA0EA00431B93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08B11D6AA0EA00431B93 /* main.m */; };
 		D01F08B51D6AA0EA00431B93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08B41D6AA0EA00431B93 /* AppDelegate.m */; };
 		D01F08B81D6AA0EA00431B93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F08B71D6AA0EA00431B93 /* ViewController.m */; };
@@ -143,6 +145,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C463A72F1D7D9DC900AA659D /* CubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewController.h; sourceTree = "<group>"; };
+		C463A7301D7D9DC900AA659D /* CubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeViewController.m; sourceTree = "<group>"; };
+		C4A395D31D7C5F74009869C6 /* BlendLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlendLayerController.h; sourceTree = "<group>"; };
+		C4A395D41D7C5F74009869C6 /* BlendLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlendLayerController.m; sourceTree = "<group>"; };
 		D01F08AD1D6AA0EA00431B93 /* ApproachIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApproachIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01F08B11D6AA0EA00431B93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D01F08B31D6AA0EA00431B93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -428,6 +434,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C463A72E1D7D9DB900AA659D /* CubeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C463A72F1D7D9DC900AA659D /* CubeViewController.h */,
+				C463A7301D7D9DC900AA659D /* CubeViewController.m */,
+			);
+			path = CubeViewController;
+			sourceTree = "<group>";
+		};
+		C4A395D21D7C5F5A009869C6 /* BlendLayerController */ = {
+			isa = PBXGroup;
+			children = (
+				C4A395D31D7C5F74009869C6 /* BlendLayerController.h */,
+				C4A395D41D7C5F74009869C6 /* BlendLayerController.m */,
+			);
+			path = BlendLayerController;
+			sourceTree = "<group>";
+		};
 		D01F08A41D6AA0EA00431B93 = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +498,8 @@
 		D01F08C71D6AA1D300431B93 /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C463A72E1D7D9DB900AA659D /* CubeViewController */,
+				C4A395D21D7C5F5A009869C6 /* BlendLayerController */,
 				D01F093D1D6EDA0B00431B93 /* ReactCocoaController */,
 				D01F09371D6D921A00431B93 /* AnimationController */,
 				D01F09311D6D8B6500431B93 /* AutoLayoutAnimationController */,
@@ -937,6 +963,7 @@
 				TargetAttributes = {
 					D01F08AC1D6AA0EA00431B93 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2W4XY8EF98;
 					};
 				};
 			};
@@ -1065,6 +1092,7 @@
 				D01F09141D6C180200431B93 /* MASCompositeConstraint.m in Sources */,
 				D01F0B561D6EE9EF00431B93 /* RACReturnSignal.m in Sources */,
 				D01F0B3B1D6EE9EF00431B93 /* NSUserDefaults+RACSupport.m in Sources */,
+				C463A7311D7D9DC900AA659D /* CubeViewController.m in Sources */,
 				D01F0B6F1D6EE9EF00431B93 /* UIButton+RACCommandSupport.m in Sources */,
 				D01F0B511D6EE9EF00431B93 /* RACKVOTrampoline.m in Sources */,
 				D01F0B761D6EE9EF00431B93 /* UIRefreshControl+RACCommandSupport.m in Sources */,
@@ -1106,6 +1134,7 @@
 				D01F08EE1D6AA1D300431B93 /* Module2ObjController.m in Sources */,
 				D01F0B4C1D6EE9EF00431B93 /* RACGroupedSignal.m in Sources */,
 				D01F0B6E1D6EE9EF00431B93 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
+				C4A395D51D7C5F74009869C6 /* BlendLayerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,16 +1246,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai howbuy investment service ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: greater2010@sina.com (4X8W4KYUUL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ApproachIOS/PrefixHeader.pch;
 				INFOPLIST_FILE = ApproachIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.howbuy.howbuyfundtesting;
+				PRODUCT_BUNDLE_IDENTIFIER = "greater2010-sina.com.xx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38548cf9-6fab-4ffd-b7be-2fd9e3feb174";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos9.3;
 			};
 			name = Debug;
 		};
@@ -1234,16 +1265,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai howbuy investment service ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: greater2010@sina.com (4X8W4KYUUL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ApproachIOS/PrefixHeader.pch;
 				INFOPLIST_FILE = ApproachIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.howbuy.howbuyfundtesting;
+				PRODUCT_BUNDLE_IDENTIFIER = "greater2010-sina.com.xx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38548cf9-6fab-4ffd-b7be-2fd9e3feb174";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos9.3;
 			};
 			name = Release;
 		};
